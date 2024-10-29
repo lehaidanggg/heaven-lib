@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "368731273381",
+    "firebase_url": "https://testbglocationv2-default-rtdb.firebaseio.com",
+    "project_id": "testbglocationv2",
+    "storage_bucket": "testbglocationv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368731273381:android:68988b279b766be7fe754c",
+        "android_client_info": {
+          "package_name": "com.example.testbglocation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCli_5Ghq6tJOGDnsBlvq41sNTJIsK7CzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368731273381:android:256c0572463b1ba7fe754c",
+        "android_client_info": {
+          "package_name": "com.heaven.sampleheavenlib"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCli_5Ghq6tJOGDnsBlvq41sNTJIsK7CzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368731273381:android:5f1c40811101a9b3fe754c",
+        "android_client_info": {
+          "package_name": "com.lhd.baseandroidapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCli_5Ghq6tJOGDnsBlvq41sNTJIsK7CzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
