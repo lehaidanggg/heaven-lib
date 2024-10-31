@@ -227,8 +227,8 @@ class AppOpenManager private constructor() : ActivityLifecycleCallbacks, Lifecyc
         }
 
         if (
-            !FBConfig.getInstance().getAdsConfig().enable_all_ads ||
-            !FBConfig.getInstance().getAdsConfig().enable_open_resume
+            !FBConfig.getAdsConfig().enable_all_ads ||
+            !FBConfig.getAdsConfig().enable_open_resume
         ) {
             return
         }

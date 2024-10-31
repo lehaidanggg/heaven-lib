@@ -5,7 +5,6 @@ import com.heaven.android.heavenlib.R
 class AppLanguage(
     var name: String,
     var code: String,
-    var isSelected: Boolean,
     var flag: Int
 ) {
 
@@ -13,12 +12,12 @@ class AppLanguage(
         val appSupportedLanguages: ArrayList<AppLanguage>
             get() {
                 val appLanguages = ArrayList<AppLanguage>()
-                appLanguages.add(AppLanguage("India", "hi", false, R.drawable.ic_hi))
-                appLanguages.add(AppLanguage("Chinese", "zh", false, R.drawable.ic_zh))
-                appLanguages.add(AppLanguage("French", "fr", false, R.drawable.ic_fr))
-                appLanguages.add(AppLanguage("Germany", "de", false, R.drawable.ic_de))
-                appLanguages.add(AppLanguage("Indonesian", "id", false, R.drawable.ic_id))
-                appLanguages.add(AppLanguage("English", "en", false, R.drawable.ic_en))
+                appLanguages.add(AppLanguage("India", "hi", R.drawable.ic_hi))
+                appLanguages.add(AppLanguage("Chinese", "zh", R.drawable.ic_zh))
+                appLanguages.add(AppLanguage("French", "fr", R.drawable.ic_fr))
+                appLanguages.add(AppLanguage("Germany", "de", R.drawable.ic_de))
+                appLanguages.add(AppLanguage("Indonesian", "id", R.drawable.ic_id))
+                appLanguages.add(AppLanguage("English", "en", R.drawable.ic_en))
 
                 return appLanguages
             }

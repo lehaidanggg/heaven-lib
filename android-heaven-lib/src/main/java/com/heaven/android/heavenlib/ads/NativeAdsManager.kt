@@ -35,7 +35,7 @@ interface IOnLoadNativeCallback {
 }
 
 class NativeAdsManager {
-    private val configAd = FBConfig.getInstance().getAdsConfig()
+    private val configAd = FBConfig.getAdsConfig()
     private val optional = NativeAdOptions.Builder().build()
 
     companion object {
@@ -211,7 +211,7 @@ class NativeAdManagerV2 {
             return@launch
         }
 
-        if (!FBConfig.getInstance().getAdsConfig().enable_all_ads || !enableAd) {
+        if (!FBConfig.getAdsConfig().enable_all_ads || !enableAd) {
             currentMap[adUnitId] = null
             _instanceNatives.postValue(currentMap)
             return@launch

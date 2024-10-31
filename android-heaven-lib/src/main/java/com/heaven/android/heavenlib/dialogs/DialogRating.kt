@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import com.heaven.android.heavenlib.R
 import com.heaven.android.heavenlib.base.dialog.BaseDialogFragment
+import com.heaven.android.heavenlib.config.HeavenEnv
 import com.heaven.android.heavenlib.databinding.DialogRatingBinding
-import com.heaven.android.heavenlib.utils.PackageInfo
 import com.heaven.android.heavenlib.utils.setOnSingleClickListener
 
 interface IRateClickListener {
@@ -126,14 +126,14 @@ class DialogRating(
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=${PackageInfo.APPLICATION_ID}")
+                    Uri.parse("market://details?id=${HeavenEnv.buildConfig.applicationId}")
                 )
             )
         } catch (e: ActivityNotFoundException) {
             startActivity(
                 Intent(
                     Intent.ACTION_VIEW,
-                    Uri.parse("https://play.google.com/store/apps/details?id=${PackageInfo.APPLICATION_ID}")
+                    Uri.parse("https://play.google.com/store/apps/details?id=${HeavenEnv.buildConfig.applicationId}")
                 )
             )
         }

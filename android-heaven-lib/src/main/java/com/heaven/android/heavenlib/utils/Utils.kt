@@ -1,6 +1,7 @@
 package com.heaven.android.heavenlib.utils
 
 import android.util.Log
+import com.heaven.android.heavenlib.config.HeavenEnv
 import com.heaven.android.heavenlib.datas.models.AppVersionModel
 import com.heaven.android.heavenlib.datas.models.StatusForceUpdate
 
@@ -30,7 +31,7 @@ object Utils {
             else "${strVersion[0]}${strVersion[1]}".toInt()
         } catch (e: Exception) {
             Log.e("TAG", "convertStringToInt: err convert string to int")
-            convertStringToInt(PackageInfo.VERSION_NAME)
+            convertStringToInt(HeavenEnv.buildConfig.versionName)
         }
 
     }

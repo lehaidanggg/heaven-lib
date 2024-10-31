@@ -1,4 +1,6 @@
 <resources>
+    <string name="sub_title_splash">This action can contain ads!</string>
+    <!---->
     <string name="title_force_update">New version available!</string>
     <string name="description_force_update">Please, update app to new version to continue.</string>
     <string name="no_thanks_force_update">No, thanks</string>
@@ -13,4 +15,8 @@
     <string name="we_are_working_hard">We are working hard for a better user experience.</string>
     <string name="that_great_to_hear">That great to hear you are satisfied with the product.</string>
     <string name="thanks_for_rating">Thanks for your rating!</string>
+    <!--Language-->
+    <string name="title_language">Language</string>
+    <string name="subtitle_language">Please choose your native language. You can change language from settings later.</string>
+
 </resources>

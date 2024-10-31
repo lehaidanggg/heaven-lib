@@ -10,10 +10,10 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.OnPaidEventListener
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.heaven.android.heavenlib.config.HeavenEnv
 import com.heaven.android.heavenlib.datas.FBConfig
 import com.heaven.android.heavenlib.datas.HeavenSharePref
 import com.heaven.android.heavenlib.utils.Logger
-import com.heaven.android.heavenlib.utils.PackageInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.util.Date
@@ -60,7 +60,7 @@ class InterstitialAdManager {
             )
             return
         }
-        if (!FBConfig.getInstance().getAdsConfig().enable_all_ads) {
+        if (!FBConfig.getAdsConfig().enable_all_ads) {
             onLoadErr("Disable all ad from RMCF")
             return
         }
@@ -193,14 +193,14 @@ class InterstitialAdManagerV2 {
                     adRequest,
                     object : InterstitialAdLoadCallback() {
                         override fun onAdFailedToLoad(adError: LoadAdError) {
-                            if (PackageInfo.IS_DEBUG_MODE) {
+                            if (HeavenEnv.buildConfig.isDebug) {
                                 Logger.log("LOAD_INTER", "LOAD FAILED: ${adError.message}")
                             }
                             continuation.resume(null)
                         }
 
                         override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                            if (PackageInfo.IS_DEBUG_MODE){
+                            if (HeavenEnv.buildConfig.isDebug){
                                 Logger.log("LOAD_INTER", "LOAD SUCCESS!")
                             }
                             continuation.resume(interstitialAd)

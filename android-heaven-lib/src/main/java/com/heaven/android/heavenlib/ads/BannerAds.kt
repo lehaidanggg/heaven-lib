@@ -52,7 +52,7 @@ class BannerAds(
             return
         }
 
-        if (!enable || !FBConfig.getInstance().getAdsConfig().enable_all_ads) {
+        if (!enable || !FBConfig.getAdsConfig().enable_all_ads) {
             onBannerListener.onBannerLoadErr()
             return
         }

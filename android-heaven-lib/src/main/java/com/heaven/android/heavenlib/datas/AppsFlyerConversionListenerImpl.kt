@@ -5,7 +5,7 @@ import android.content.Context
 import android.util.Log
 import com.appsflyer.AppsFlyerConversionListener
 import com.google.firebase.analytics.FirebaseAnalytics
-import com.heaven.android.heavenlib.utils.PackageInfo
+import com.heaven.android.heavenlib.config.HeavenEnv
 
 
 class AppsFlyerConversionListenerImpl : AppsFlyerConversionListener {
@@ -42,7 +42,7 @@ class AppsFlyerConversionListenerImpl : AppsFlyerConversionListener {
     @SuppressLint("LongLogTag")
     override fun onConversionDataFail(error: String?) {
         Log.e(TAG, "error onAttributionFailure :  $error")
-        if (PackageInfo.IS_DEBUG_MODE) {
+        if (HeavenEnv.buildConfig.isDebug) {
             HeavenSharePref.statusOrganic = false
         }
         firebaseAnalytics.logEvent("conversion_failed_${source}", null)

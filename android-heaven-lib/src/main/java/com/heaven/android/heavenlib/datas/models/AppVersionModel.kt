@@ -2,7 +2,7 @@ package com.heaven.android.heavenlib.datas.models
 
 import com.google.gson.Gson
 import com.google.gson.annotations.SerializedName
-import com.heaven.android.heavenlib.utils.PackageInfo
+import com.heaven.android.heavenlib.config.HeavenEnv
 
 data class AppVersionModel(
     @SerializedName("isDisplay")
@@ -22,7 +22,7 @@ data class AppVersionModel(
             return AppVersionModel(
                 isDisplay = true,
                 isForce = true,
-                lastVersion = PackageInfo.VERSION_NAME
+                lastVersion = HeavenEnv.buildConfig.versionName
             )
         }
 
