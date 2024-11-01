@@ -1,7 +1,9 @@
 package com.heaven.android.heavenlib.config
 
+import com.heaven.android.heavenlib.datas.HeavenSharePref
 import com.heaven.android.heavenlib.datas.models.AppLanguage
 import java.lang.RuntimeException
+
 
 object HeavenEnv {
     // BUILD CONFIG
@@ -16,8 +18,8 @@ object HeavenEnv {
 
 
     // INTRO
-    private var _configIntro: List<ConfigIntro>? = null
-    val configIntro: List<ConfigIntro>
+    private var _configIntro: ConfigIntro? = null
+    val configIntro: ConfigIntro
         get() = _configIntro ?: throw RuntimeException("HeavenEnv: Intro config not initialized!")
 
     // LANGUAGE
@@ -34,12 +36,12 @@ object HeavenEnv {
     fun init(
         buildConfig: ConfigBuildInfo,
         configSplash: ConfigSplash,
-//        configIntro: List<ConfigIntro>,
+        configIntro: ConfigIntro,
         configLanguage: ConfigLanguage
     ) {
         _buildConfig = buildConfig
         _configSplash = configSplash
-//        _configIntro = configIntro
+        _configIntro = configIntro
         _configLanguage = configLanguage
     }
 

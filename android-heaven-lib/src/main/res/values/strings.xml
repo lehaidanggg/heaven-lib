@@ -18,5 +18,8 @@
     <!--Language-->
     <string name="title_language">Language</string>
     <string name="subtitle_language">Please choose your native language. You can change language from settings later.</string>
+    <!--Intro-->
+    <string name="next">Next</string>
+    <string name="start">Start</string>
 
 </resources>

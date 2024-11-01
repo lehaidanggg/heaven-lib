@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.google.android.gms.ads.nativead.NativeAdView
@@ -67,12 +68,34 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity() {
         activityScope.cancelCoroutines()
     }
 
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            fullScreenImmersive(window)
+//            window.hideNavBar()
+//            hideNavigationBar()
+        }
+    }
+
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
         MyContextWrapper.wrap(
             newBase,
             HeavenSharePref.languageCode
         )
+    }
+
+    open fun fullScreenImmersive(window: Window?) {
+        if (window != null) {
+            fullScreenImmersive(window.decorView)
+        }
+    }
+
+    open fun fullScreenImmersive(view: View) {
+        val uiOptions =
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        view.systemUiVisibility = uiOptions
+
     }
 
     private var forceUpdateDialog: DialogForceUpdate? = null

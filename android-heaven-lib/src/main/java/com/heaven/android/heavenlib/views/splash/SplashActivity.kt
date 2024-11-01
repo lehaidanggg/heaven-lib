@@ -19,16 +19,13 @@ import com.heaven.android.heavenlib.datas.UMPUtils
 import com.heaven.android.heavenlib.datas.models.StatusForceUpdate
 import com.heaven.android.heavenlib.utils.Logger
 import com.heaven.android.heavenlib.utils.Utils.isNeedUpdateAppVersions
-import com.heaven.android.heavenlib.views.intro.IntroActivity
 import com.heaven.android.heavenlib.views.language.LanguageActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.util.concurrent.atomic.AtomicBoolean
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     private val interAds = InterstitialAdManager.getInstance()
     private var isMobileAdsInitializeCalled = AtomicBoolean(false)
+    private val adUnitInter = HeavenEnv.configSplash.adUnitSplash
 
     override fun makeBinding(layoutInflater: LayoutInflater): ActivitySplashBinding {
         return ActivitySplashBinding.inflate(layoutInflater)
@@ -69,8 +66,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         if (isMobileAdsInitializeCalled.getAndSet(true)) {
             return
         }
-        val backgroundThread = CoroutineScope(Dispatchers.IO)
-        backgroundThread.launch {
+        activityScope.launch {
             MobileAds.initialize(this@SplashActivity) {
                 runOnUiThread {
                     fetchRMCF()
@@ -125,7 +121,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         preloadAdLanguageOrIntro()
         interAds.loadInterAds(
             this,
-            adUnitId = "",
+            adUnitId = adUnitInter,
             enable = FBConfig.getAdsConfig().enable_inter_splash,
             isSplashAd = true,
             onSuccessAds = {

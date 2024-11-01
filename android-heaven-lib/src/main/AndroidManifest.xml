@@ -8,10 +8,10 @@
 
     <application>
         <activity
-            android:name=".views.language.LanguageActivity"
+            android:name=".views.intro.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".views.intro.IntroActivity"
+            android:name=".views.language.LanguageActivity"
             android:exported="false" />
         <activity
             android:name=".views.splash.SplashActivity"

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SampleHeavenLib</string>
+    <string name="title_intro">Title intro</string>
+    <string name="des_intro">Description intro</string>
+    <string name="title_next">Next</string>
+    <string name="title_start">Start</string>
+    <!---->
+    <string name="title_intro1">Real - time Location Tracking</string>
+    <string name="des_intro1">Track your family’s real-time location to keep them safe even in the background, especially your kids and older people.</string>
+    <string name="title_intro2">Accurate &amp; Fast Location Updates</string>
+    <string name="des_intro2">Pinpoint your family’s exact location accurately. Keep you informed with fast real-time location updates.</string>
+    <string name="title_intro3">Unlimited Member &amp; History</string>
+    <string name="des_intro3">You can add as many family members to your network as possible and see their complete location history.</string>
+    <string name="title_intro4">Detailed Battery Information</string>
+    <string name="des_intro4">You will see detailed battery charge level &amp; status and notice any abnormalities to avoid losing your touch.</string>
 </resources>
